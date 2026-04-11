@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Allow HTML files
+!*.html
+
+# Also allow folders (so traversal works)
+!*/

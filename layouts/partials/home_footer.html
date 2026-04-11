@@ -1,0 +1,21 @@
+<div
+  class="home-footer-gifs"
+  style="
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  "
+>
+  {{ $dir := "static/images/gifs" }} {{ if fileExists $dir }} {{ range (readDir
+  $dir) }} {{ if not .IsDir }} {{ $path := printf "/images/gifs/%s" .Name }}
+  <img
+    src="{{ $path | relURL }}"
+    alt="{{ .Name }}"
+    style="width: 48px; height: 48px; object-fit: contain"
+  />
+  {{ end }} {{ end }} {{ else }}
+  <p>No GIF folder found</p>
+  {{ end }}
+</div>

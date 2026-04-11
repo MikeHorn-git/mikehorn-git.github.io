@@ -1,0 +1,92 @@
+# If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
+# contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://mikehorn-git.github.io/"
+title: "Mike.Horn"
+theme: "PaperMod"
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+relativeURLs: true
+canonifyURLs: true
+mainsections: ["posts", "writeups"]
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+pagination:
+  disableAliases: false
+  pagerSize: 5
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Posts
+          url: posts
+          weight: 5
+        - name: Writeups
+          url: writeups
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Mike Horn"
+  author: ["MikeHorn"]
+
+  defaultTheme: dark
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+
+  homeInfoParams:
+      Title: "Home"
+
+  socialIcons:
+      - name: github
+        title: Github
+        url: "https://github.com/MikeHorn-git"
+      - name: rootme
+        title: Root-me
+        url: "https://www.root-me.org/MikeHorn"
+
+assets:
+  favicon: "favicons/favicon.ico"
+  favicon16x16: "favicons/favicon-16x16.png"
+  favicon32x32: "favicons/favicon-32x32.png"
+  webmanifest: "favicons/site.webmanifest"
+  apple_touch_icon: "favicons/apple-touch-icon.png"
+
+caches:
+  images:
+    dir: :cacheDir/images
